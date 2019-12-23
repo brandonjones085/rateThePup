@@ -1,0 +1,22 @@
+version: '3'
+
+services: 
+  angular: 
+    build: puprate #name of app
+    ports: 
+      - "4200:4200"
+    volumes: 
+      - ./puprate:/app
+    
+  express: 
+    build: backend
+    ports: 
+      - "3000:3000"
+    links: 
+      - database
+
+  database:
+    image: mongo
+    ports: 
+      - "27017:27017"
+    

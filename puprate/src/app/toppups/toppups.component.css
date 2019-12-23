@@ -1,0 +1,80 @@
+mat-card{
+    margin-left: 20%;
+    margin-top: 5%; 
+}
+
+h1{
+  font-family: 'Alegreya', serif;
+  font-size: 50px; 
+  padding: 30px; 
+}
+
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .center{
+    width: 75%; 
+    margin: 10px auto; 
+  }
+
+  .main-div{
+ 
+    justify-content: center; 
+    align-items: center; 
+  }
+
+.name{
+  font-family: 'Courgette', cursive;
+  font-size: 35px;
+}
+
+.breed{
+  font-family: 'Courgette', cursive;
+  font-size: 25px;
+}
+
+.quote{
+  font-family: 'Niconne', cursive;
+  font-size: 30px
+}
+
+
+.rates{
+  font-size: 20px; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+
+        .name{
+          font-family: 'Courgette', cursive;
+          font-size: 20px;
+        }
+        
+        .breed{
+          font-family: 'Courgette', cursive;
+          font-size: 15px;
+        }
+        
+        .quote{
+          font-family: 'Niconne', cursive;
+          font-size: 20px
+        }
+      
+        h1{
+          font-family: 'Alegreya', serif;
+          font-size: 40px; 
+          padding: 30px; 
+        }
+        
+    
+    }
+

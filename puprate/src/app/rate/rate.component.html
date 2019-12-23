@@ -1,0 +1,56 @@
+<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Courgette|Niconne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alegreya|Courgette|Niconne&display=swap" rel="stylesheet">
+
+<div class="container">
+  <h1 class="text-center"><b>Select the best pup </b></h1>
+    <div class="row ">
+
+<div class="col">
+
+<mat-card class="example-card">
+<!-- *ngFor="let pup of pups"  -->
+        <mat-card-header>
+        
+          <mat-card-title class="name">Name: {{pups[0]?.name}}</mat-card-title>
+          <mat-card-subtitle class="breed">Breed: {{pups[0]?.breed}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="pups[0]?.imagePath" [alt]="pups[0]?.name">
+        <mat-card-content>
+            <mat-card-subtitle class="quote">Quote: </mat-card-subtitle>
+          <p class="quote">
+            {{pups[0]?.quote}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button id="leftButton" mat-button (click)="rateLPup($event, pups[0].id, pups[0].name, pups[0].breed, pups[0].quote, pups[0].rates, pups[0].imagePath)">Best Pup</button>
+         
+        </mat-card-actions>
+      </mat-card>
+    </div>
+      <div class="col"></div>
+
+      <div class="col">
+      <mat-card class="example-card" >
+        <!-- *ngFor="let pup of pups"  -->
+                <mat-card-header>
+                
+                  <mat-card-title class="name">Name: {{pups[1]?.name}}</mat-card-title>
+                  <mat-card-subtitle class="breed">Dog Breed: {{pups[1]?.breed}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="pups[1]?.imagePath" [alt]="pups[1]?.name">
+                <mat-card-content>
+                    <mat-card-subtitle class="quote">Quote: </mat-card-subtitle>
+                  <p class="quote">
+                    {{pups[1]?.quote}}
+                  
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button id="rightButton" mat-button (click)="rateRPup($event, pups[1].id, pups[1].name, pups[1].breed, pups[1].quote, pups[1].rates, pups[1].imagePath )">Best Pup</button>
+                 
+                </mat-card-actions>
+              </mat-card>
+            </div>
+        </div>
+        </div>

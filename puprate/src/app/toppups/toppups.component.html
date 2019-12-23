@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Courgette|Niconne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alegreya|Courgette|Niconne&display=swap" rel="stylesheet">
+
+<div class="container">
+<h1 class="text-center"><b>Top 10 Pups </b></h1>
+<div class="main-div">
+<mat-card class="example-card center" multi="true" layout="center" *ngFor="let pup of pups ">
+    <mat-card-header>
+      
+      <mat-card-title class="name">Name: {{pup.name}}</mat-card-title>
+      <mat-card-subtitle class="breed">Breed: {{pup.breed}} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="pup.imagePath" [alt]="pup.name">
+    
+    <mat-card-content>
+            <mat-card-subtitle>Favorite Quote: </mat-card-subtitle>
+      <p class="quote">
+        {{pup.quote}}
+  
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="rates">
+      <b>Rates: {{pup.rates}}</b>
+     
+    </mat-card-actions>
+  </mat-card>
+
+    <h1 *ngIf="pups.length<=0">No Pups Added Yet</h1>
+  </div>
+
+  </div>
+
+
+
