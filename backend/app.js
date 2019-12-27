@@ -37,5 +37,4 @@ app.use((req,res,next)=>{
 app.use("/pups", pupsRoutes)
 app.use("/rate", rateRoutes); 
 
-
 module.exports = app; 

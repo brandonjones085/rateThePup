@@ -1,10 +1,17 @@
 version: '3'
 
 services: 
-  angular: 
-    build: puprate #name of app
+  nginx: 
+    restart: always
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./nginx
     ports: 
-      - "4200:4200"
+      - "80:80"
+
+  puprate: 
+    build: puprate #name of app
+
     volumes: 
       - ./puprate:/app
     
@@ -13,9 +20,10 @@ services:
     ports: 
       - "3000:3000"
     links: 
-      - database
+      - mongo
 
-  database:
+  mongo:
+    container_name: mongo
     image: mongo
     ports: 
       - "27017:27017"
