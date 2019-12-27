@@ -7,8 +7,7 @@ before_install:
 
 
 
-script: 
-  - docker run brandonjones085/puprate-test npm test -- --coverage
+
 
 after_success: 
   - docker build -t brandonjones085/puprate-nginx ./nginx
