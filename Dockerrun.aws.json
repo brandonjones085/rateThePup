@@ -1,0 +1,10 @@
+{
+    "AWSEBDockerrunVersion": 2, 
+    "containerDefinitions": [
+        {
+            "name":"puprate-angular", 
+            "image":"brandonjones085/puprate"
+        }
+    ]
+
+}
