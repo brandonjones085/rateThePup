@@ -15,14 +15,6 @@ const app = express();
 
 
 
-// dynamoose.AWS.config.update({
-//     aws_table_name: 'pups',
-//     accessKeyId: 'AKIATRJEZWU2CT5UCYFC', 
-//     secretAccessKey: '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', 
-//     region: "us-west-1"
-//     endpoint: " https://dynamodb.us-west-1.amazonaws.com"
-// })
-
 
 
 
