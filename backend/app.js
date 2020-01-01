@@ -7,10 +7,28 @@ const pupsRoutes = require("./routes/pups")
 const rateRoutes = require("./routes/rate")
 
 
+
+
+
 const app = express();
 
-const dbHost = 'mongodb://database/pupApp'
-//"mongodb+srv://brandon:Bj959211@cluster0-pfblm.mongodb.net/pups?retryWrites=true&w=majority"
+
+
+
+// dynamoose.AWS.config.update({
+//     aws_table_name: 'pups',
+//     accessKeyId: 'AKIATRJEZWU2CT5UCYFC', 
+//     secretAccessKey: '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', 
+//     region: "us-west-1"
+//     endpoint: " https://dynamodb.us-west-1.amazonaws.com"
+// })
+
+
+
+
+const dbHost = 'mongodb+srv://brandon:Bj959211@cluster0-pfblm.mongodb.net/pups?retryWrites=true&w=majority'
+
+
 
 
 mongoose.connect(dbHost)

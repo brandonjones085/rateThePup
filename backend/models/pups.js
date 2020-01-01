@@ -1,6 +1,8 @@
 const mongoose = require("mongoose"); 
 
-const pupSchema = mongoose.Schema({
+
+
+const pupSchema = new mongoose.Schema({
     name: {type:String, required: true}, 
     breed: {type:String, required: true},
     quote: {type:String, required: true}, 

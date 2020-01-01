@@ -3,6 +3,8 @@ const multer = require('multer')
 const Pup = require("../models/pups")
 const router = express.Router(); 
 
+
+
 const MIME_TYPE_MAP = {
     'image/png':'png', 
     'image/jpeg':'jpg', 
@@ -29,6 +31,8 @@ const storage = multer.diskStorage({
 
 router.put("/:id", (req,res,next)=>{
 
+  
+
     const pup = new Pup({
         _id: req.body.id, 
         name: req.body.name, 
@@ -50,6 +54,7 @@ router.put("/:id", (req,res,next)=>{
 
 
 router.get("" ,(req,res,next)=>{
+
 
     Pup.aggregate([{$sample:{size:2}}])
     .then(documents=>{

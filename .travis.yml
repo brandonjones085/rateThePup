@@ -5,10 +5,8 @@ services:
 before_install: 
   - docker build -t brandonjones085/puprate-test -f ./puprate/Dockerfile.dev ./puprate 
 
-
 script: 
   - echo "RUNNING SCRIPT"
-
 
 after_success: 
   - docker build -t brandonjones085/puprate-nginx ./nginx
@@ -16,10 +14,23 @@ after_success:
   - docker build -t brandonjones085/puprate-express ./backend
   - docker build -t brandonjones085/puprate-mongo ./mongo
 
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push brandonjones085/puprate-nginx 
   - docker push brandonjones085/puprate-angular
   - docker push brandonjones085/puprate-express
   - docker push brandonjones085/puprate-mongo
+
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "puprate-docker"
+  env: "PuprateDocker-env"
+  bucket_name: elasticbeanstalk-us-west-1-243279705396
+  bucket_path: "docker-puprate"
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"

@@ -3,8 +3,36 @@
     "containerDefinitions": [
         {
             "name":"puprate-angular", 
-            "image":"brandonjones085/puprate"
+            "image":"brandonjones085/puprate-angular", 
+            "hostname":"puprate", 
+            "essential":false
+        }, 
+        {
+            "name":"puprate-express", 
+            "image":"brandonjones085/puprate-express", 
+            "hostname":"express", 
+            "essential":false
+        }, 
+        {
+            "name":"puprate-mongo", 
+            "image":"brandonjones085/puprate-mongo", 
+            "hostname":"mongo", 
+            "essential":false
+        }, 
+        {
+            "name":"nginx", 
+            "image": "brandonjones085/puprate-nginx", 
+            "essential": true, 
+            "portMappings":[
+            {
+                "hostPort": 80, 
+                "containerPort": 80
+
+            }
+        ],
+            "links":["puprate"]
+           
         }
     ]
-
+    
 }

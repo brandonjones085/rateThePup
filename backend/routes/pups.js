@@ -3,6 +3,8 @@ const multer = require('multer')
 const Pup = require("../models/pups")
 const router = express.Router(); 
 
+
+
 const MIME_TYPE_MAP = {
     'image/png':'png', 
     'image/jpeg':'jpg', 
@@ -28,6 +30,8 @@ const storage = multer.diskStorage({
 
 
 router.post("", multer({storage:storage}).single("image"), (req,res,next)=>{
+    
+   
     const url = req.protocol + "://" + req.get("host")
     const pups = new Pup({
         
@@ -36,7 +40,27 @@ router.post("", multer({storage:storage}).single("image"), (req,res,next)=>{
         quote: req.body.quote, 
         imagePath: url + "/images/" + req.file.filename
     }); 
-    pups.save().then(createdPup=>{
+
+
+
+    // docClient.put(params, function(err, data){
+    //     if(err){
+    //         res.send({
+    //             success:false, 
+    //             message:'Error: Server Error uploading pup'
+    //         })
+    //     }else{
+    //         console.log("Data" + data); 
+    //         const {Items} = data; 
+    //         res.send({
+    //             success:true, 
+    //             message: "Success adding pup", 
+           
+    //         })
+    //     }
+    // })
+
+    docClient.put(params).save().then(createdPup=>{
         res.status(201).json({
             message:"Pup added successfully", 
             pup:{
