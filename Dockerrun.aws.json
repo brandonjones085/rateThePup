@@ -2,14 +2,14 @@
     "AWSEBDockerrunVersion": 2, 
     "containerDefinitions": [
         {
-            "name":"puprate-angular", 
+            "name":"puprate", 
             "image":"brandonjones085/puprate-angular", 
             "hostname":"puprate-angular", 
             "essential":false, 
             "memory": 128
         }, 
         {
-            "name":"puprate-express", 
+            "name":"express", 
             "image":"brandonjones085/puprate-express", 
             "hostname":"puprate-express", 
             "essential":false, 
@@ -17,7 +17,7 @@
         }, 
 
         {
-            "name":"puprate-nginx", 
+            "name":"nginx", 
             "image": "brandonjones085/puprate-nginx", 
             "essential": true, 
             "memory": 128, 
@@ -28,7 +28,7 @@
 
             }
         ],
-            "links":["puprate-angular"]
+            "links":["puprate"]
            
         }
     ]
