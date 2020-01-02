@@ -13,12 +13,7 @@
             "hostname":"express", 
             "essential":false
         }, 
-        {
-            "name":"puprate-mongo", 
-            "image":"brandonjones085/puprate-mongo", 
-            "hostname":"mongo", 
-            "essential":false
-        }, 
+
         {
             "name":"nginx", 
             "image": "brandonjones085/puprate-nginx", 

@@ -7,14 +7,7 @@ const pupsRoutes = require("./routes/pups")
 const rateRoutes = require("./routes/rate")
 
 
-
-
-
 const app = express();
-
-
-
-
 
 
 
