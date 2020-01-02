@@ -5,19 +5,22 @@
             "name":"puprate-angular", 
             "image":"brandonjones085/puprate-angular", 
             "hostname":"puprate", 
-            "essential":false
+            "essential":false, 
+            "memory": 128
         }, 
         {
             "name":"puprate-express", 
             "image":"brandonjones085/puprate-express", 
             "hostname":"express", 
-            "essential":false
+            "essential":false, 
+            "memory": 128
         }, 
 
         {
             "name":"nginx", 
             "image": "brandonjones085/puprate-nginx", 
             "essential": true, 
+            "memory": 128, 
             "portMappings":[
             {
                 "hostPort": 80, 

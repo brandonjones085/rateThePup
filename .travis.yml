@@ -12,14 +12,14 @@ after_success:
   - docker build -t brandonjones085/puprate-nginx ./nginx
   - docker build -t brandonjones085/puprate-angular ./puprate
   - docker build -t brandonjones085/puprate-express ./backend
-  - docker build -t brandonjones085/puprate-mongo ./mongo
+
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push brandonjones085/puprate-nginx 
   - docker push brandonjones085/puprate-angular
   - docker push brandonjones085/puprate-express
-  - docker push brandonjones085/puprate-mongo
+  
 
 
 deploy: 
