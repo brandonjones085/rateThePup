@@ -4,14 +4,14 @@
         {
             "name":"puprate-angular", 
             "image":"brandonjones085/puprate-angular", 
-            "hostname":"puprate", 
+            "hostname":"puprate-angular", 
             "essential":false, 
             "memory": 128
         }, 
         {
             "name":"puprate-express", 
             "image":"brandonjones085/puprate-express", 
-            "hostname":"express", 
+            "hostname":"puprate-express", 
             "essential":false, 
             "memory": 128
         }, 
